@@ -1,7 +1,9 @@
 ---
 layout: page
-title: Elements
-nav-menu: true
+title: Projects
+nav-menu: false
+description: Work goes here
+image: assets/images/banner.png
 ---
 
 <!-- Main -->
