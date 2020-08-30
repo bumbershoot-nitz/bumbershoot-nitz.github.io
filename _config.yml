@@ -3,7 +3,7 @@ title: Architectural Pancakces
 subtitle:
 email: nitika.duggal@architecturalpancakes.space
 email_sub: nitikaduggal.arch@gmail.com
-description: Something kewl
+description: "Website and architecture portfolio of Nitika Duggal"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://architecturalpancakes.space" # the base hostname & protocol for your site
 author:
@@ -16,7 +16,7 @@ phone: +61 450 919 305
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-count: 2
 
 # social settings
 500px_url:
