@@ -15,6 +15,11 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="{{ "/assets/css/ie8.css" | relative_url }}" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/assets/css/ie9.css" | relative_url }}" /><![endif]-->
     <noscript><link rel="stylesheet" href="{{ "/assets/css/noscript.css" | relative_url }}" /></noscript>
+
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+    <!-- Google Analytics -->
+    {% include analytics.html %}
+    {% endif %}
 </head>
 
     <body class="is-loading-0 is-loading-1 is-loading-2">
