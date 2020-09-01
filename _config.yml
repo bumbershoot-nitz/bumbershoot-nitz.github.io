@@ -15,6 +15,10 @@ country: Australia
 phone: +61 450 919 305
 google_analytics: UA-176735298-1
 
+# Collection settings
+collections:
+  photos:
+
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 2

@@ -4,6 +4,7 @@ title: Projects
 nav-menu: false
 description: Work goes here
 image: assets/images/banner.png
+permalink: "/projects"
 ---
 
 <!-- Main -->
