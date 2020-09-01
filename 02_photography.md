@@ -4,7 +4,7 @@ title: Photography
 nav-menu: false
 description: Photography goes here
 image: assets/images/banner.png
-permalink: "/photography"
+permalink: "/photography.html"
 ---
 
 <!-- Thumbnail -->

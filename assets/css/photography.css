@@ -735,7 +735,7 @@ dl dd {
     top: 0;
     width: 4em;
     height: 4em;
-    background-image: url("images/close-small-alt.svg");
+    background-image: url("images/close.svg");
     background-repeat: no-repeat;
     background-size: 32px 32px;
     cursor: pointer;
@@ -1132,7 +1132,7 @@ body.is-loading-1 #main {
     left: 50%;
     width: 3em;
     height: 3em;
-    background-image: url("images/spinner.svg");
+    background-image: url("images/refresh.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1202,12 +1202,12 @@ body.is-loading-2 #viewer .slide {
 
     #viewer .inner .nav-next,
     #viewer .inner .nav-previous {
-        background-image: url("images/arrow-small.svg");
+        background-image: url("images/arrow.svg");
         background-size: 32px 32px;
     }
 
     body.fullscreen #viewer .inner .toggle {
-        background-image: url("images/open-small.svg");
+        background-image: url("images/open.svg");
     }
 
 }
@@ -1227,7 +1227,7 @@ body.is-loading-2 #viewer .slide {
     }
 
     #viewer .inner .toggle {
-        background-image: url("images/close-small.svg") !important;
+        background-image: url("images/open.svg") !important;
         background-size: 32px 32px;
     }
 
