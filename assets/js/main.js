@@ -4,349 +4,418 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+(function ($) {
 
-	skel.breakpoints({
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 360px)'
-	});
+    skel.breakpoints({
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 980px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 480px)',
+        xxsmall: '(max-width: 360px)'
+    });
 
-	/**
-	 * Applies parallax scrolling to an element's background image.
-	 * @return {jQuery} jQuery object.
-	 */
-	$.fn._parallax = (skel.vars.browser == 'ie' || skel.vars.browser == 'edge' || skel.vars.mobile) ? function() { return $(this) } : function(intensity) {
+    /**
+     * Applies parallax scrolling to an element's background image.
+     * @return {jQuery} jQuery object.
+     */
+    $.fn._parallax = (skel.vars.browser == 'ie' || skel.vars.browser == 'edge' || skel.vars.mobile) ? function () {
+        return $(this)
+    } : function (intensity) {
 
-		var	$window = $(window),
-			$this = $(this);
+        var $window = $(window),
+            $this = $(this);
 
-		if (this.length == 0 || intensity === 0)
-			return $this;
+        if (this.length == 0 || intensity === 0)
+            return $this;
 
-		if (this.length > 1) {
+        if (this.length > 1) {
 
-			for (var i=0; i < this.length; i++)
-				$(this[i])._parallax(intensity);
+            for (var i = 0; i < this.length; i++)
+                $(this[i])._parallax(intensity);
 
-			return $this;
+            return $this;
 
-		}
+        }
 
-		if (!intensity)
-			intensity = 0.25;
+        if (!intensity)
+            intensity = 0.25;
 
-		$this.each(function() {
+        $this.each(function () {
 
-			var $t = $(this),
-				on, off;
+            var $t = $(this),
+                on, off;
 
-			on = function() {
+            on = function () {
 
-				$t.css('background-position', 'center 100%, center 100%, center 0px');
+                $t.css('background-position', 'center 100%, center 100%, center 0px');
 
-				$window
-					.on('scroll._parallax', function() {
+                $window
+                    .on('scroll._parallax', function () {
 
-						var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
+                        var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
 
-						$t.css('background-position', 'center ' + (pos * (-1 * intensity)) + 'px');
+                        $t.css('background-position', 'center ' + (pos * (-1 * intensity)) + 'px');
 
-					});
+                    });
 
-			};
+            };
 
-			off = function() {
+            off = function () {
 
-				$t
-					.css('background-position', '');
+                $t
+                    .css('background-position', '');
 
-				$window
-					.off('scroll._parallax');
+                $window
+                    .off('scroll._parallax');
 
-			};
+            };
 
-			skel.on('change', function() {
+            skel.on('change', function () {
 
-				if (skel.breakpoint('medium').active)
-					(off)();
-				else
-					(on)();
+                if (skel.breakpoint('medium').active)
+                    (off)();
+                else
+                    (on)();
 
-			});
+            });
 
-		});
+        });
 
-		$window
-			.off('load._parallax resize._parallax')
-			.on('load._parallax resize._parallax', function() {
-				$window.trigger('scroll');
-			});
+        $window
+            .off('load._parallax resize._parallax')
+            .on('load._parallax resize._parallax', function () {
+                $window.trigger('scroll');
+            });
 
-		return $(this);
+        return $(this);
 
-	};
+    };
 
-	$(function() {
+    $(function () {
 
-		var	$window = $(window),
-			$body = $('body'),
-			$wrapper = $('#wrapper'),
-			$header = $('#header'),
-			$banner = $('#banner');
+        var $window = $(window),
+            $body = $('body'),
+            $wrapper = $('#wrapper'),
+            $header = $('#header'),
+            $banner = $('#banner');
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+        // Disable animations/transitions until the page has loaded.
+        $body.addClass('is-loading');
 
-			$window.on('load pageshow', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
+        $window.on('load pageshow', function () {
+            window.setTimeout(function () {
+                $body.removeClass('is-loading');
+            }, 100);
+        });
 
-		// Clear transitioning state on unload/hide.
-			$window.on('unload pagehide', function() {
-				window.setTimeout(function() {
-					$('.is-transitioning').removeClass('is-transitioning');
-				}, 250);
-			});
+        // Clear transitioning state on unload/hide.
+        $window.on('unload pagehide', function () {
+            window.setTimeout(function () {
+                $('.is-transitioning').removeClass('is-transitioning');
+            }, 250);
+        });
 
-		// Fix: Enable IE-only tweaks.
-			if (skel.vars.browser == 'ie' || skel.vars.browser == 'edge')
-				$body.addClass('is-ie');
+        // Fix: Enable IE-only tweaks.
+        if (skel.vars.browser == 'ie' || skel.vars.browser == 'edge')
+            $body.addClass('is-ie');
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+        // Fix: Placeholder polyfill.
+        $('form').placeholder();
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
+        // Prioritize "important" elements on medium.
+        skel.on('+medium -medium', function () {
+            $.prioritize(
+                '.important\\28 medium\\29',
+                skel.breakpoint('medium').active
+            );
+        });
 
-		// Scrolly.
-			$('.scrolly').scrolly({
-				offset: function() {
-					return $header.height() - 2;
-				}
-			});
+        // Scrolly.
+        $('.scrolly').scrolly({
+            offset: function () {
+                return $header.height() - 2;
+            }
+        });
 
-		// Tiles.
-			var $tiles = $('.tiles > article');
+        // Tiles.
+        var $tiles = $('.tiles > article');
 
-			$tiles.each(function() {
+        $tiles.each(function () {
 
-				var $this = $(this),
-					$image = $this.find('.image'), $img = $image.find('img'),
-					$link = $this.find('.link'),
-					x;
+            var $this = $(this),
+                $image = $this.find('.image'), $img = $image.find('img'),
+                $link = $this.find('.link'),
+                x;
 
-				// Image.
+            // Image.
 
-					// Set image.
-						$this.css('background-image', 'url(' + $img.attr('src') + ')');
+            // Set image.
+            $this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-					// Set position.
-						if (x = $img.data('position'))
-							$image.css('background-position', x);
+            // Set position.
+            if (x = $img.data('position'))
+                $image.css('background-position', x);
 
-					// Hide original.
-						$image.hide();
+            // Hide original.
+            $image.hide();
 
-				// Link.
-					if ($link.length > 0) {
+            // Link.
+            if ($link.length > 0) {
 
-						$x = $link.clone()
-							.text('')
-							.addClass('primary')
-							.appendTo($this);
+                $x = $link.clone()
+                    .text('')
+                    .addClass('primary')
+                    .appendTo($this);
 
-						$link = $link.add($x);
+                $link = $link.add($x);
 
-						$link.on('click', function(event) {
+                $link.on('click', function (event) {
 
-							var href = $link.attr('href');
+                    var href = $link.attr('href');
 
-							// Prevent default.
-								event.stopPropagation();
-								event.preventDefault();
+                    // Prevent default.
+                    event.stopPropagation();
+                    event.preventDefault();
 
-							// Start transitioning.
-								$this.addClass('is-transitioning');
-								$wrapper.addClass('is-transitioning');
+                    // Start transitioning.
+                    $this.addClass('is-transitioning');
+                    $wrapper.addClass('is-transitioning');
 
-							// Redirect.
-								window.setTimeout(function() {
+                    // Redirect.
+                    window.setTimeout(function () {
 
-									if ($link.attr('target') == '_blank')
-										window.open(href);
-									else
-										location.href = href;
+                        if ($link.attr('target') == '_blank')
+                            window.open(href);
+                        else
+                            location.href = href;
 
-								}, 500);
+                    }, 500);
 
-						});
+                });
 
-					}
+            }
 
-			});
+        });
 
-		// Header.
-			if (skel.vars.IEVersion < 9)
-				$header.removeClass('alt');
+        // Project Tiles.
+        var $projectTiles = $('.project_tiles > article');
 
-			if ($banner.length > 0
-			&&	$header.hasClass('alt')) {
+        $projectTiles.each(function () {
 
-				$window.on('resize', function() {
-					$window.trigger('scroll');
-				});
+            var $this = $(this),
+                $image = $this.find('.image'), $img = $image.find('img'),
+                $link = $this.find('.link'),
+                x;
 
-				$window.on('load', function() {
+            // Image.
 
-					$banner.scrollex({
-						bottom:		$header.height() + 10,
-						terminate:	function() { $header.removeClass('alt'); },
-						enter:		function() { $header.addClass('alt'); },
-						leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
-					});
+            // Set image.
+            $this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-					window.setTimeout(function() {
-						$window.triggerHandler('scroll');
-					}, 100);
+            // Set position.
+            if (x = $img.data('position'))
+                $image.css('background-position', x);
 
-				});
+            // Hide original.
+            $image.hide();
 
-			}
+            // Link.
+            if ($link.length > 0) {
 
-		// Banner.
-			$banner.each(function() {
+                $x = $link.clone()
+                    .text('')
+                    .addClass('primary')
+                    .appendTo($this);
 
-				var $this = $(this),
-					$image = $this.find('.image'), $img = $image.find('img');
+                $link = $link.add($x);
 
-				// Parallax.
-					$this._parallax(0.275);
+                $link.on('click', function (event) {
 
-				// Image.
-					if ($image.length > 0) {
+                    var href = $link.attr('href');
 
-						// Set image.
-							$this.css('background-image', 'url(' + $img.attr('src') + ')');
+                    // Prevent default.
+                    event.stopPropagation();
+                    event.preventDefault();
 
-						// Hide original.
-							$image.hide();
+                    // Start transitioning.
+                    $this.addClass('is-transitioning');
+                    $wrapper.addClass('is-transitioning');
 
-					}
+                    // Redirect.
+                    window.setTimeout(function () {
 
-			});
+                        if ($link.attr('target') == '_blank')
+                            window.open(href);
+                        else
+                            location.href = href;
 
-		// Menu.
-			var $menu = $('#menu'),
-				$menuInner;
+                    }, 500);
 
-			$menu.wrapInner('<div class="inner"></div>');
-			$menuInner = $menu.children('.inner');
-			$menu._locked = false;
+                });
 
-			$menu._lock = function() {
+            }
 
-				if ($menu._locked)
-					return false;
+        });
 
-				$menu._locked = true;
+        // Header.
+        if (skel.vars.IEVersion < 9)
+            $header.removeClass('alt');
 
-				window.setTimeout(function() {
-					$menu._locked = false;
-				}, 350);
+        if ($banner.length > 0
+            && $header.hasClass('alt')) {
 
-				return true;
+            $window.on('resize', function () {
+                $window.trigger('scroll');
+            });
 
-			};
+            $window.on('load', function () {
 
-			$menu._show = function() {
+                $banner.scrollex({
+                    bottom: $header.height() + 10,
+                    terminate: function () {
+                        $header.removeClass('alt');
+                    },
+                    enter: function () {
+                        $header.addClass('alt');
+                    },
+                    leave: function () {
+                        $header.removeClass('alt');
+                        $header.addClass('reveal');
+                    }
+                });
 
-				if ($menu._lock())
-					$body.addClass('is-menu-visible');
+                window.setTimeout(function () {
+                    $window.triggerHandler('scroll');
+                }, 100);
 
-			};
+            });
 
-			$menu._hide = function() {
+        }
 
-				if ($menu._lock())
-					$body.removeClass('is-menu-visible');
+        // Banner.
+        $banner.each(function () {
 
-			};
+            var $this = $(this),
+                $image = $this.find('.image'), $img = $image.find('img');
 
-			$menu._toggle = function() {
+            // Parallax.
+            $this._parallax(0.275);
 
-				if ($menu._lock())
-					$body.toggleClass('is-menu-visible');
+            // Image.
+            if ($image.length > 0) {
 
-			};
+                // Set image.
+                $this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-			$menuInner
-				.on('click', function(event) {
-					event.stopPropagation();
-				})
-				.on('click', 'a', function(event) {
+                // Hide original.
+                $image.hide();
 
-					var href = $(this).attr('href');
+            }
 
-					event.preventDefault();
-					event.stopPropagation();
+        });
 
-					// Hide.
-						$menu._hide();
+        // Menu.
+        var $menu = $('#menu'),
+            $menuInner;
 
-					// Redirect.
-						window.setTimeout(function() {
-							window.location.href = href;
-						}, 250);
+        $menu.wrapInner('<div class="inner"></div>');
+        $menuInner = $menu.children('.inner');
+        $menu._locked = false;
 
-				});
+        $menu._lock = function () {
 
-			$menu
-				.appendTo($body)
-				.on('click', function(event) {
+            if ($menu._locked)
+                return false;
 
-					event.stopPropagation();
-					event.preventDefault();
+            $menu._locked = true;
 
-					$body.removeClass('is-menu-visible');
+            window.setTimeout(function () {
+                $menu._locked = false;
+            }, 350);
 
-				})
-				.append('<a class="close" href="#menu">Close</a>');
+            return true;
 
-			$body
-				.on('click', 'a[href="#menu"]', function(event) {
+        };
 
-					event.stopPropagation();
-					event.preventDefault();
+        $menu._show = function () {
 
-					// Toggle.
-						$menu._toggle();
+            if ($menu._lock())
+                $body.addClass('is-menu-visible');
 
-				})
-				.on('click', function(event) {
+        };
 
-					// Hide.
-						$menu._hide();
+        $menu._hide = function () {
 
-				})
-				.on('keydown', function(event) {
+            if ($menu._lock())
+                $body.removeClass('is-menu-visible');
 
-					// Hide on escape.
-						if (event.keyCode == 27)
-							$menu._hide();
+        };
 
-				});
+        $menu._toggle = function () {
 
-	});
+            if ($menu._lock())
+                $body.toggleClass('is-menu-visible');
+
+        };
+
+        $menuInner
+            .on('click', function (event) {
+                event.stopPropagation();
+            })
+            .on('click', 'a', function (event) {
+
+                var href = $(this).attr('href');
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                // Hide.
+                $menu._hide();
+
+                // Redirect.
+                window.setTimeout(function () {
+                    window.location.href = href;
+                }, 250);
+
+            });
+
+        $menu
+            .appendTo($body)
+            .on('click', function (event) {
+
+                event.stopPropagation();
+                event.preventDefault();
+
+                $body.removeClass('is-menu-visible');
+
+            })
+            .append('<a class="close" href="#menu">Close</a>');
+
+        $body
+            .on('click', 'a[href="#menu"]', function (event) {
+
+                event.stopPropagation();
+                event.preventDefault();
+
+                // Toggle.
+                $menu._toggle();
+
+            })
+            .on('click', function (event) {
+
+                // Hide.
+                $menu._hide();
+
+            })
+            .on('keydown', function (event) {
+
+                // Hide on escape.
+                if (event.keyCode == 27)
+                    $menu._hide();
+
+            });
+
+    });
 
 })(jQuery);
