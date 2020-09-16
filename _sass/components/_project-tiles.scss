@@ -102,9 +102,14 @@
 				opacity: 0;
 			}
 
-			&:nth-child(4n + 1),
-			&:nth-child(4n) {
+			&:nth-child(1),
+			&:nth-child(4),
+			&:nth-child(6) {
 				flex: 1 auto;
+			}
+			&:nth-child(5),
+			&:nth-child(8){
+				flex: 1 100%;
 			}
 
 			&:nth-child(6n - 5) {
