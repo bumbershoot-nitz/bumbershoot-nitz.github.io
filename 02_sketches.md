@@ -1,12 +1,15 @@
 ---
 layout: page
-title: Projects
+title: Sketches
 nav-menu: false
-description: Work goes here
+description: Sketches go here
 image: assets/images/banner.png
-permalink: "/projects.html"
+permalink: "/sketches.html"
 ---
+
+<!-- Main -->
 <div id="main" class="alt">
+
 <!-- One -->
 <section id="one">
 	<div class="inner">
@@ -14,7 +17,7 @@ permalink: "/projects.html"
 			<h1>{{ page.title }}</h1>
 		</header>
 <!-- Content -->
-    {% include project_tiles.html %}
+<h2 id="content">Coming Soon</h2>
     </div>
 </section>
 </div>

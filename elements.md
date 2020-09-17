@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Projects
+title: Elements
 nav-menu: false
-description: Work goes here
+description: Elements
 image: assets/images/banner.png
 permalink: "/elements.html"
 ---
@@ -14,7 +14,7 @@ permalink: "/elements.html"
 <section id="one">
 	<div class="inner">
 		<header class="major">
-			<h1>Elements</h1>
+			<h1>{{ page.title }}</h1>
 		</header>
 
 <!-- Content -->
@@ -406,8 +406,6 @@ print 'It took ' + i + ' iterations to sort the deck.';
 
 </div>
 </div>
-
 </div>
 </section>
-
 </div>

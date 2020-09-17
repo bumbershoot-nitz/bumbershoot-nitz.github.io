@@ -10,9 +10,10 @@
 
 <body>
 
-    {% include header.html %}
+{% include header.html %}
 
-    <!-- Banner -->
+<!-- Banner -->
+<div id="main" class="alt">
     <section id="banner" class="major">
         <div class="inner">
             <header class="major">
@@ -22,20 +23,20 @@
                 <p>{{ page.description }}</p>
             </div>
             <ul class="actions">
-                <li><a href="https://drive.google.com/file/d/1fFkm7rN-PT7KbYlT0PIUWr97HF0YqhPW/view" class="button" target="_blank" rel="noreferrer">Download Resume</a></li>
-                <li><a href="https://drive.google.com/file/d/1HASVLW8lh96HePI8uqeafy1VHcqtwMAz/view" class="button" target="_blank" rel="noreferrer">Download Portfolio</a></li>
+                <li><a href="https://drive.google.com/file/d/1fFkm7rN-PT7KbYlT0PIUWr97HF0YqhPW/view" class="button"
+                       target="_blank" rel="noreferrer">Download Resume</a></li>
+                <li><a href="https://drive.google.com/file/d/1HASVLW8lh96HePI8uqeafy1VHcqtwMAz/view" class="button"
+                       target="_blank" rel="noreferrer">Download Portfolio</a></li>
             </ul>
         </div>
     </section>
 
     <!-- Main -->
-    <div id="main">
 
-        <!-- One -->
-        {% include tiles.html %}
-    </div>
-
+    <!-- One -->
+    {% include tiles.html %}
     {% include footer.html %}
+</div>
 
 </body>
 

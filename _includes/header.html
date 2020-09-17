@@ -1,6 +1,6 @@
 <!-- Wrapper -->
 <div id="wrapper">
 <!-- Header -->
-<header id="header" class="{% if page.layout == 'landing' %}alt style2{% endif %} {% if page.layout == "home" %}alt{% endif %}">
+<header id="header" class="{% if page.layout == 'landing' %}alt style2{% endif %}{% if page.layout == 'home' %}alt{% endif %}">
 	<a href="{% if page.layout == 'home' %}#{% else %}{{ site.url }}{% endif %}" class="logo"><strong>{{ site.title }}</strong></a>
 </header>
