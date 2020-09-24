@@ -19,6 +19,7 @@ google_analytics: UA-176735298-1
 collections:
   photos:
   projects:
+    output: true
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
