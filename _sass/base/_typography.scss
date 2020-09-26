@@ -57,6 +57,11 @@ em, i {
 
 p {
     margin: 0 0 _size(element-margin) 0;
+
+    &.project {
+        font-size: 0.75em;
+        text-align: justify;
+    }
 }
 
 blockquote > p {

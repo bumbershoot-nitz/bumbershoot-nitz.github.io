@@ -26,9 +26,9 @@
 				<div class="contact-method">
 					<span class="icon alt fa-envelope"></span>
 					<h3>Email</h3>
-					<a href="#">{{ site.email }}</a>
+					<a href="mailto:{{ site.email }}">{{ site.email }}</a>
 					{% if site.email_sub %}
-                    <a href="#">{{ site.email_sub }}</a>
+                    <a href="mailto:{{ site.email_sub }}">{{ site.email_sub }}</a>
                     {% endif %}
 				</div>
 			</section>
@@ -36,7 +36,7 @@
 				<div class="contact-method">
 					<span class="icon alt fa-phone"></span>
 					<h3>Phone</h3>
-					<span>{{ site.phone }}</span>
+					<a href="tel:{{ site.phone }}"><span>{{ site.phone }}</span></a>
 				</div>
 			</section>
 			<section>
