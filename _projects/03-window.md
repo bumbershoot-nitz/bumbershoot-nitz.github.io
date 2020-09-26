@@ -1,6 +1,8 @@
 ---
+layout: post
+nav-menu: false
+permalink: "projects/rule-rebillion.html"
+image: assets/images/fulls/03.jpg
+thumbnail: assets/images/thumbs/03.jpg
 title: Rule and Rebellion
-image: assets/images/fulls/04.jpg
-thumbnail: assets/images/thumbs/04.jpg
-caption: Rule and Rebellion
 ---

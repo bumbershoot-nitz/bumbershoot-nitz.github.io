@@ -1,6 +1,8 @@
 ---
-title: Digital Fabrication
+layout: post
+nav-menu: false
+permalink: "projects/digital-fabrication.html"
 image: assets/images/fulls/02.jpg
 thumbnail: assets/images/thumbs/02.jpg
-caption: Digital Fabrication
+title: Digital Fabrication
 ---
