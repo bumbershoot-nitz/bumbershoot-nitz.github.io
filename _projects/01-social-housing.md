@@ -13,18 +13,4 @@ thumbnail: assets/images/thumbs/01.jpg
 title: Social Housing in Portugal
 seo-description: A small info for SEO
 ---
-<div class="row">
-<div class="8u 12u$(small)" id="scroll-container">
-{% for image in page.images %}
-<img src="{{ site.baseurl }}/{{ image }}" alt="" class="scrollable" />
-{% endfor %}
-</div>
-<div class="4u 12u$(small)">
-<p class="project">
-The social housing was originally designed by Architect Alvaro Siza, this project aims at
-re-designing the Bouça social housing at Porto, Portugal. Visiting the site in Portugal
-helped me understand the problems for this challenging site which lies alongside an
-active railway line.
-</p>
-</div>
-</div>
+The social housing project, originally designed by Architect Álvaro Siza, aims at re-designing the Bouça social housing at Porto, Portugal. Visiting the site in Portugal helped me understand the problems for this challenging site which lies alongside an active railway line.
