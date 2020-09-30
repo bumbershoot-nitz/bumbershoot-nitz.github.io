@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: project
+image-in-tile: false
 nav-menu: false
 permalink: "projects/central-station.html"
 image: assets/images/fulls/05.jpg

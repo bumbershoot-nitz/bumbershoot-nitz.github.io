@@ -2,9 +2,11 @@
 <section id="one" class="project_tiles">
     {% for tile in tiles %}
     <article>
-    <span class="image">
-      <img src="{{ tile.image }}" alt=""/>
-    </span>
+        {% if tile.image-in-tile %}
+        <span class="image">
+            <img src="{{ tile.image }}" alt=""/>
+        </span>
+        {% endif %}
         <header class="major">
             <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.title }}</a></h3>
             <p>{{ tile.description }}</p>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+    {% include header.html %} 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>{{ page.title }}</h1>
+			{% if page.caption %}<p>{{ page.caption }}</p>{% endif %}
+		</header>
+		{% if page.cover-image %}<span class="image main"><img src="{{ site.baseurl }}/{{ page.cover-image }}" alt="" /></span>{% endif %}
+		{{ content }}
+	</div>
+</section>
+
+</div>
+
+    {% include footer.html %}
+	<script src="{{ "assets/js/photoscroll.js" | absolute_url }}"></script>
+
+
+</body>
+
+</html>

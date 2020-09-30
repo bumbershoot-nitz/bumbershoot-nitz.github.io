@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: project
+image-in-tile: false
 nav-menu: false
 permalink: "projects/western-sydney-airport.html"
 image: assets/images/fulls/06.jpg
