@@ -11,6 +11,7 @@ images:
     - assets/images/fulls/05.jpg
 thumbnail: assets/images/thumbs/01.jpg
 title: Social Housing in Portugal
+seo-description: A small info for SEO
 ---
 <div class="row">
 <div class="8u 12u$(small)" id="scroll-container">
