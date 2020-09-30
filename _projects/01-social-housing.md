@@ -3,13 +3,20 @@ layout: project
 image-in-tile: false
 nav-menu: false
 permalink: "projects/social-housing.html"
-image: assets/images/fulls/01.jpg
+images:
+    - assets/images/fulls/01.jpg
+    - assets/images/fulls/02.jpg
+    - assets/images/fulls/03.jpg
+    - assets/images/fulls/04.jpg
+    - assets/images/fulls/05.jpg
 thumbnail: assets/images/thumbs/01.jpg
 title: Social Housing in Portugal
 ---
 <div class="row">
-<div class="8u 12u$(small)">
-{% if page.image %}<img src="{{ site.baseurl }}/{{ page.image }}" alt="" />{% endif %}
+<div class="8u 12u$(small)" id="scroll-container">
+{% for image in page.images %}
+<img src="{{ site.baseurl }}/{{ image }}" alt="" class="scrollable" />
+{% endfor %}
 </div>
 <div class="4u 12u$(small)">
 <p class="project">

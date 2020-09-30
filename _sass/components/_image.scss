@@ -6,8 +6,46 @@
 
 /* Image */
 
+@include keyframes('fade-out-to-none') {
+    0% {
+        opacity: 1
+    }
+
+    1% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@include keyframes('fade-in-from-none') {
+    0% {
+        opacity: 0
+    }
+
+    1% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
 img {
     max-width: 100%;
+
+    &.scrollable{
+        display: none;
+        @include vendor('animation', 'fade-out-to-none 0.2s forwards');
+    }
+
+    &.visible {
+        display: block;
+        @include vendor('animation', 'fade-in-from-none 0.8s forwards');
+    }
 }
 
 .image {
